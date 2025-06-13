@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -75,8 +74,12 @@
         <img src="./assets/withoutbg.png" alt="Goutam Kumar Sah Logo"
           class="w-32 h-auto shadow-lg border-2 border-transparent bg-transparent" />
       </a>
+      <!-- Hamburger Button (Mobile) -->
+      <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none" aria-label="Open Menu">
+        <i class="fas fa-bars"></i>
+      </button>
       <!-- Navigation Links -->
-      <ul class="flex gap-6 text-white font-semibold text-sm mb-0">
+      <ul id="menu" class="hidden flex-col md:flex md:flex-row gap-6 text-white font-semibold text-sm mb-0 bg-[#18181b] md:bg-transparent absolute md:static top-16 left-0 w-full md:w-auto z-50">
         <li><a href="index.html" class="hover:text-[#1DCD9F] transition">About Me</a></li>
         <li><a href="education.html" class="hover:text-[#1DCD9F] transition">Education</a></li>
         <li><a href="experience.html" class="hover:text-[#1DCD9F] transition">Experience</a></li>
@@ -86,6 +89,16 @@
       </ul>
     </nav>
   </header>
+  <script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function () {
+      const btn = document.getElementById('menu-btn');
+      const menu = document.getElementById('menu');
+      btn.addEventListener('click', function () {
+        menu.classList.toggle('hidden');
+      });
+    });
+  </script>
 
   <!-- Contact Section (main content) -->
   <main class="flex-grow flex items-center justify-center px-4">
